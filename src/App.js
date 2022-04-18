@@ -11,17 +11,15 @@ export default function App() {
     "Watermelon",
     "Pineapple"
   ];
-  const [filterList, setFilterList] = React.useState();
+  const [filterList, setFilterList] = React.useState(list);
 
   const handleSearch = (event) => {
     if(event.target.value === ""){
-      setFilterList();
+      setFilterList(list);
       return;
     }
-    const filteredValues = list.filter(
-    (item) => 
-    item.toLowerCase().indexOf(event.target.value.toLowerCase()) !==-1
-    );
+    const filteredValues = list.filter((item) => 
+      item.toLowerCase().indexOf(event.target.value.toLowerCase()) !==-1);
     setFilterList(filteredValues);
   };
 
