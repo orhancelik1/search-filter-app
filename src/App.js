@@ -11,11 +11,11 @@ export default function App() {
     "Watermelon",
     "Pineapple"
   ];
-  const [filterList, setFilterList] = React.useState(list);
+  const [filterList, setFilterList] = React.useState();
 
   const handleSearch = (event) => {
     if(event.target.value === ""){
-      setFilterList(list);
+      setFilterList();
       return;
     }
     const filteredValues = list.filter(
